@@ -1,12 +1,20 @@
 export PS1='\u@$PWD:'
 function m(){ mkdir -p "$@" && eval cd "\"\$$#\"";}
 alias v="vim"
-alias c="pushd"
-alias u="pushd .."
-alias b="popd"
-alias h="pushd ~"
+function c(){ pushd "@" > /dev/null; }
+alias u="pushd .. > /dev/null"
+alias b="popd > /dev/null"
+alias h="pushd ~ > /dev/null"
 alias ls="ls -alG"
 alias l="ls"
+function g(){ git "$@"; }
+function gm(){ git commit "$@"; }
+function go(){ git checkout "$@"; }
+function ga(){ git add "$@"; }
+function gs(){ git status "$@"; }
+function gb(){ git branch "$@"; }
+function gl(){ git log "$@"; }
+function gh(){ git help "$@"; }
 alias vi="/usr/local/Cellar/vim/7.4.826/bin/vim"
 alias vim="/usr/local/Cellar/vim/7.4.826/bin/vim"
 export NVM_DIR="/Users/stig/.nvm"
